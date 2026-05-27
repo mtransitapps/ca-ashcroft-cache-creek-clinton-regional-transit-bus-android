@@ -1,7 +1,6 @@
 # ORIGINAL FILE: https://github.com/mtransitapps/commons/tree/master/shared-overwrite
 name: MT generate images
 on:
-  pull_request: # make available for initial PR but job is Skipped by default
   push:
     branches:
       - master
@@ -48,7 +47,6 @@ env:
 jobs:
   MT-GENERATE-IMAGES-JOB:
     name: "MT generate images"
-    if: ${{ github.event_name != 'pull_request' }}
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
